@@ -63,7 +63,9 @@
             <button class="filter-btn" data-guide="chapa">🔥 Chapa</button>
             <button class="filter-btn" data-guide="lope">🥬 LOPE</button>
             <button class="filter-btn" data-guide="linha">🍔 Linha</button>
-            <button class="filter-btn" data-guide="fritas">🍟 McFritas</button>
+            <button class="filter-btn" data-guide="mcfritas">🍟 McFritas</button>
+            <button class="filter-btn" data-guide="fritos">🍗 Fritos</button>
+            <button class="filter-btn" data-guide="cond">🧂 Condimentação</button>
           </div>
         </div>
       </div>
@@ -126,16 +128,37 @@
       { guide: "linha", category: "🍔 Linha · Operação", question: "Qual é o tempo de linha estabelecido?", options: ["15 a 25 segundos", "25 a 35 segundos", "35 a 50 segundos", "50 a 60 segundos"], answer: "35 a 50 segundos", explanation: "O tempo de linha deve ser de 35 a 50 segundos." },
       { guide: "linha", category: "🍔 Linha · Operação", question: "Em quantos segundos o iniciador deve reagir para ativar os pães?", options: ["1 a 2 segundos", "3 a 5 segundos", "5 a 8 segundos", "10 segundos"], answer: "3 a 5 segundos", explanation: "O tempo de reação para ativar os pães é de 3 a 5 segundos." },
 
-      // FRITAS
-      { guide: "fritas", category: "🍟 McFritas", question: "Qual a temperatura da fritadeira de McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "A fritadeira de McFritas opera a 168°C." },
-      { guide: "fritas", category: "🍟 McFritas", question: "Qual o tempo de fritura das McFritas?", options: ["2'30\"", "3'00\"", "3'10\"", "4'00\""], answer: "3'10\"", explanation: "O tempo de fritura das McFritas é 3 minutos e 10 segundos." },
-      { guide: "fritas", category: "🍟 McFritas", question: "Qual o peso da McFritas tamanho Médio?", options: ["73g", "95g", "102g", "146g"], answer: "102g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
-      { guide: "fritas", category: "🍗 Produtos Fritos", question: "Qual a temperatura da fritadeira para produtos de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "A fritadeira para frango e tortas opera a 180°C." },
-      { guide: "fritas", category: "🍗 Produtos Fritos", question: "Qual o tempo de fritura do McCrispy?", options: ["3'15\"", "4'00\"", "5'00\"", "6'"], answer: "6'", explanation: "McCrispy e Tortas: 6 minutos. Nuggets, Chicken e Junior: 3'15\"." },
-      { guide: "fritas", category: "🍗 Produtos Fritos", question: "Qual a capacidade máxima de McNuggets no cesto?", options: ["12 unidades", "16 unidades", "20 unidades", "24 unidades"], answer: "24 unidades", explanation: "Capacidade máxima: McChicken 6, McNuggets 24, Chicken Jr 6, Crispy 4, Tortas 16." },
-      { guide: "fritas", category: "🥧 Tortas", question: "Qual o tempo total de validade das tortas após a fritura?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "As tortas têm 2 horas de validade total, incluindo os 20 minutos de resfriamento." },
-      { guide: "fritas", category: "🥧 Tortas", question: "Qual o tempo de resfriamento das tortas?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "20 minutos", explanation: "As tortas devem resfriar por 20 minutos antes de serem embaladas." },
-      { guide: "fritas", category: "🌡️ Geral", question: "Qual o limite máximo de Compostos Polares no óleo?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "Os Compostos Polares devem ser iguais ou abaixo de 24%." }
+      // MC FRITAS
+      { guide: "mcfritas", category: "🍟 McFritas · Temperatura", question: "Qual a temperatura da fritadeira de McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "A fritadeira de McFritas opera a 168°C." },
+      { guide: "mcfritas", category: "🍟 McFritas · Tempo", question: "Qual o tempo de fritura das McFritas?", options: ["2'30\"", "3'00\"", "3'10\"", "4'00\""], answer: "3'10\"", explanation: "O tempo de fritura das McFritas é 3 minutos e 10 segundos." },
+      { guide: "mcfritas", category: "🍟 McFritas · Tamanhos", question: "Qual o peso da McFritas tamanho Médio?", options: ["73g", "95g", "102g", "146g"], answer: "102g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
+      { guide: "mcfritas", category: "🍟 McFritas · Tamanhos", question: "Qual o peso da McFritas tamanho Grande?", options: ["73g", "102g", "120g", "146g"], answer: "146g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
+      { guide: "mcfritas", category: "🍟 McFritas · Óleo", question: "Qual o limite máximo de Compostos Polares no óleo?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "Os Compostos Polares devem ser iguais ou abaixo de 24%." },
+      { guide: "mcfritas", category: "🍟 McFritas · Validade", question: "Qual a validade dos sacos de McFritas no congelador portátil?", options: ["6 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "Os sacos de McFritas no congelador portátil têm validade de 24 horas." },
+
+      // PRODUTOS FRITOS
+      { guide: "fritos", category: "🍗 Fritos · Temperatura", question: "Qual a temperatura da fritadeira para produtos de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "A fritadeira para frango e tortas opera a 180°C." },
+      { guide: "fritos", category: "🍗 Fritos · Temperatura", question: "Qual a temperatura da UHC para carnes brancas?", options: ["72°C", "79°C", "85°C", "90°C"], answer: "85°C", explanation: "A UHC para carnes brancas opera a 85°C." },
+      { guide: "fritos", category: "🍗 Fritos · Tempo de Fritura", question: "Qual o tempo de fritura do McCrispy?", options: ["3'15\"", "4'00\"", "5'00\"", "6'"], answer: "6'", explanation: "McCrispy e Tortas: 6 minutos. Nuggets, Chicken e Junior: 3'15\"." },
+      { guide: "fritos", category: "🍗 Fritos · Tempo de Fritura", question: "Qual o tempo de fritura de Nuggets, McChicken e Junior?", options: ["2'30\"", "3'00\"", "3'15\"", "4'00\""], answer: "3'15\"", explanation: "Nuggets, Chicken e Junior têm tempo de fritura de 3 minutos e 15 segundos." },
+      { guide: "fritos", category: "🍗 Fritos · UHC", question: "Qual o tempo de vida do McChicken na UHC?", options: ["10 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "30 minutos", explanation: "McChicken: 30 minutos na UHC." },
+      { guide: "fritos", category: "🍗 Fritos · UHC", question: "Qual o tempo de vida dos McNuggets e McJunior na UHC?", options: ["10 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "20 minutos", explanation: "McNuggets e McJunior: 20 minutos na UHC." },
+      { guide: "fritos", category: "🍗 Fritos · Capacidade", question: "Qual a capacidade máxima de McNuggets no cesto?", options: ["12 unidades", "16 unidades", "20 unidades", "24 unidades"], answer: "24 unidades", explanation: "McNuggets: 24 unid. · McChicken: 6 · Chicken Jr: 6 · Crispy: 4 · Tortas: 16." },
+      { guide: "fritos", category: "🥧 Tortas", question: "Qual o tempo de resfriamento das tortas?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "20 minutos", explanation: "As tortas devem resfriar por 20 minutos antes de serem embaladas." },
+      { guide: "fritos", category: "🥧 Tortas", question: "Qual o tempo total de validade das tortas após a fritura?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "As tortas têm 2 horas de validade total, incluindo os 20 minutos de resfriamento." },
+
+      // CONDIMENTAÇÃO
+      { guide: "cond", category: "🍔 Big Mac", question: "Qual a quantidade de cebola reidratada em cada andar do Big Mac?", options: ["2g", "3,5g", "5g", "7g"], answer: "3,5g", explanation: "Cada andar do Big Mac leva cebola reidratada 3,5g." },
+      { guide: "cond", category: "🍔 Big Mac", question: "Qual a quantidade de alface em cada andar do Big Mac?", options: ["8g", "10g", "12g", "15g"], answer: "12g", explanation: "Alface em tiras 12g em cada andar do Big Mac." },
+      { guide: "cond", category: "🍔 Big Mac", question: "No Big Mac, o queijo Cheddar fica em qual andar?", options: ["Andar superior (clube)", "Andar inferior (base)", "Nos dois andares", "Não tem queijo"], answer: "Andar inferior (base)", explanation: "O queijo Cheddar fica no andar inferior, entre a segunda carne e a alface." },
+      { guide: "cond", category: "🔥 Big Tasty", question: "Qual queijo é usado no Big Tasty?", options: ["Queijo Cheddar", "Queijo Emmental", "Queijo Prato", "Queijo Mussarela"], answer: "Queijo Emmental", explanation: "O Big Tasty usa Queijo Emental — 2 fatias em cima e 1 fatia embaixo das carnes." },
+      { guide: "cond", category: "🔥 Big Tasty", question: "Quantas carnes leva o Big Tasty padrão?", options: ["1 carne 4:1", "2 carnes 4:1", "1 carne 10:1", "2 carnes 10:1"], answer: "2 carnes 4:1", explanation: "O Big Tasty padrão leva 2 carnes 4:1." },
+      { guide: "cond", category: "🥓 McNífico Bacon", question: "Qual a quantidade de bacon no McNífico Bacon?", options: ["1 fatia", "2 fatias", "3 fatias", "4 fatias"], answer: "2 fatias", explanation: "O McNífico Bacon leva 2 fatias de bacon." },
+      { guide: "cond", category: "🐔 Chicken Deluxe", question: "Qual o molho do Chicken Deluxe 1?", options: ["Molho Ranch 2/3oz", "Molho CBO 1oz", "Maionese 2/3oz", "Molho Big Mac 1/3oz"], answer: "Maionese 2/3oz", explanation: "O Chicken Deluxe 1 leva Maionese 2/3oz." },
+      { guide: "cond", category: "🥓 Chicken Bacon Ranch", question: "Qual o pão do Chicken Bacon Ranch 3?", options: ["Pão Crispy", "Pão Big Mac", "Pão de Batata", "Pão Brioche"], answer: "Pão de Batata", explanation: "O Chicken Bacon Ranch 3 é servido no Pão de Batata." },
+      { guide: "cond", category: "⭐ Brabíssimo Beef", question: "Qual o tipo de cebola do Brabíssimo Beef 1?", options: ["Cebola reidratada", "Cebola fresca", "Cebola Crispy 10g", "Cebola shoyu"], answer: "Cebola Crispy 10g", explanation: "O Brabíssimo Beef 1 leva Cebola Crispy 10g." },
+      { guide: "cond", category: "🏆 Brabíssimo Clubhouse", question: "Qual o tipo de cebola do Brabíssimo Clubhouse?", options: ["Cebola reidratada", "Cebola fresca", "Cebola Crispy", "Cebola shoyu 15g"], answer: "Cebola shoyu 15g", explanation: "O Brabíssimo Clubhouse leva Cebola shoyu 15g." },
+      { guide: "cond", category: "🥗 Side Salad", question: "Quantas unidades de Tomate Grape tem o Side Salad?", options: ["1 unidade", "2 unidades", "3 unidades", "4 unidades"], answer: "2 unidades", explanation: "O Side Salad leva Alface 85g e Tomate Grape 2 unidades." }
     ];
 
     let selectedGuide = "all";
