@@ -1,6 +1,6 @@
 # 📚 MC Guias — Estudo Operacional
 
-Site de estudo pessoal baseado nos guias rápidos operacionais do McDonald's (Arcos Dourados S.A.).
+Site de estudo pessoal baseado nos guias rápidos operacionais de um fastfood fictício.
 
 ## 🗂️ Estrutura do Projeto
 
@@ -34,26 +34,7 @@ mcguias/
 - **Simulado Geral** com filtro por guia
 - **Design responsivo** para celular e desktop
 - **Persistência de aba** via `sessionStorage`
-
-## 🚀 Como Usar
-
-Clone o repositório e abra `index.html` no navegador — não requer servidor ou build.
-
-```bash
-git clone https://github.com/seu-usuario/mcguias.git
-cd mcguias
-# Abra index.html no navegador
-```
-
-## 🌐 GitHub Pages
-
-Para publicar via GitHub Pages:
-
-1. Vá em **Settings → Pages**
-2. Em **Source**, selecione `Deploy from a branch`
-3. Escolha a branch `main` e pasta `/ (root)`
-4. Acesse em: `https://seu-usuario.github.io/mcguias`
-
+- 
 ## 🔧 Adicionando um Novo Guia
 
 1. Crie `pages/nome-guia.html` copiando a estrutura de `chapa.html` ou `lope.html`
