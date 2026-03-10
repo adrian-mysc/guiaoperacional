@@ -62,6 +62,8 @@
             <button class="filter-btn active" data-guide="all">🎯 Todos</button>
             <button class="filter-btn" data-guide="chapa">🔥 Chapa</button>
             <button class="filter-btn" data-guide="lope">🥬 LOPE</button>
+            <button class="filter-btn" data-guide="linha">🍔 Linha</button>
+            <button class="filter-btn" data-guide="fritas">🍟 McFritas</button>
           </div>
         </div>
       </div>
@@ -113,7 +115,27 @@
       { guide: "lope", category: "🥬 LOPE · Queijo", question: "Qual é a temperatura ideal do queijo para uso?", options: ["10°C", "13°C", "17,5°C", "22°C"], answer: "17,5°C", explanation: "A temperatura ideal do queijo é 17,5°C (entre 15°C e 18°C)." },
       { guide: "lope", category: "🥬 LOPE · Alface", question: "Quantas cubas rasas rende 1 pacote de alface?", options: ["4 cubas", "6 cubas", "8 cubas", "10 cubas"], answer: "8 cubas", explanation: "1 pacote de alface rende 8 cubas rasas (250g) ou 4 cubas médias (500g)." },
       { guide: "lope", category: "🥬 LOPE · Cebola", question: "Em que temperatura deve estar a água para reidratação da cebola?", options: ["0°C a 2°C", "1°C a 4°C", "5°C a 8°C", "10°C a 15°C"], answer: "1°C a 4°C", explanation: "A água deve estar entre 1°C e 4°C (água fria da máquina de suco)." },
-      { guide: "lope", category: "🥬 LOPE · Rota", question: "A cada quantos minutos o LOPE deve seguir a rota de operação?", options: ["5 minutos", "10 minutos", "15 minutos", "30 minutos"], answer: "15 minutos", explanation: "O LOPE deve seguir a rota de operação a cada 15 minutos durante todo o turno." }
+      { guide: "lope", category: "🥬 LOPE · Rota", question: "A cada quantos minutos o LOPE deve seguir a rota de operação?", options: ["5 minutos", "10 minutos", "15 minutos", "30 minutos"], answer: "15 minutos", explanation: "O LOPE deve seguir a rota de operação a cada 15 minutos durante todo o turno." },
+
+      // LINHA
+      { guide: "linha", category: "🍔 Linha · Tostadeira", question: "Qual a temperatura das placas A e B da tostadeira?", options: ["254°C", "265°C", "271°C", "280°C"], answer: "271°C", explanation: "Placas A e B = 271°C. Placa C = 254°C." },
+      { guide: "linha", category: "🍔 Linha · Tostadeira", question: "Qual o tempo de caramelização na tostadeira?", options: ["15 segundos", "18 segundos", "22 segundos", "30 segundos"], answer: "22 segundos", explanation: "O tempo de caramelização é de 22 segundos." },
+      { guide: "linha", category: "🍔 Linha · UHC", question: "Qual a temperatura da UHC para carnes vermelhas na Linha?", options: ["72°C", "75°C", "79°C", "85°C"], answer: "79°C", explanation: "UHC: carnes vermelhas = 79°C e carnes brancas = 85°C." },
+      { guide: "linha", category: "🍔 Linha · UHC", question: "Qual o tempo de vida do McCrispy na UHC da Linha?", options: ["20 minutos", "30 minutos", "45 minutos", "60 minutos"], answer: "60 minutos", explanation: "McCrispy: 60 min · McChicken: 30 min · McNuggets/McJunior: 20 min · Carnes vermelhas: 10 min." },
+      { guide: "linha", category: "🍔 Linha · Mesa", question: "Qual a faixa de temperatura da mesa de condimentação?", options: ["35°C a 45°C", "42°C a 55°C", "49°C a 57°C", "55°C a 65°C"], answer: "49°C a 57°C", explanation: "A mesa de condimentação opera entre 49°C e 57°C." },
+      { guide: "linha", category: "🍔 Linha · Operação", question: "Qual é o tempo de linha estabelecido?", options: ["15 a 25 segundos", "25 a 35 segundos", "35 a 50 segundos", "50 a 60 segundos"], answer: "35 a 50 segundos", explanation: "O tempo de linha deve ser de 35 a 50 segundos." },
+      { guide: "linha", category: "🍔 Linha · Operação", question: "Em quantos segundos o iniciador deve reagir para ativar os pães?", options: ["1 a 2 segundos", "3 a 5 segundos", "5 a 8 segundos", "10 segundos"], answer: "3 a 5 segundos", explanation: "O tempo de reação para ativar os pães é de 3 a 5 segundos." },
+
+      // FRITAS
+      { guide: "fritas", category: "🍟 McFritas", question: "Qual a temperatura da fritadeira de McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "A fritadeira de McFritas opera a 168°C." },
+      { guide: "fritas", category: "🍟 McFritas", question: "Qual o tempo de fritura das McFritas?", options: ["2'30\"", "3'00\"", "3'10\"", "4'00\""], answer: "3'10\"", explanation: "O tempo de fritura das McFritas é 3 minutos e 10 segundos." },
+      { guide: "fritas", category: "🍟 McFritas", question: "Qual o peso da McFritas tamanho Médio?", options: ["73g", "95g", "102g", "146g"], answer: "102g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
+      { guide: "fritas", category: "🍗 Produtos Fritos", question: "Qual a temperatura da fritadeira para produtos de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "A fritadeira para frango e tortas opera a 180°C." },
+      { guide: "fritas", category: "🍗 Produtos Fritos", question: "Qual o tempo de fritura do McCrispy?", options: ["3'15\"", "4'00\"", "5'00\"", "6'"], answer: "6'", explanation: "McCrispy e Tortas: 6 minutos. Nuggets, Chicken e Junior: 3'15\"." },
+      { guide: "fritas", category: "🍗 Produtos Fritos", question: "Qual a capacidade máxima de McNuggets no cesto?", options: ["12 unidades", "16 unidades", "20 unidades", "24 unidades"], answer: "24 unidades", explanation: "Capacidade máxima: McChicken 6, McNuggets 24, Chicken Jr 6, Crispy 4, Tortas 16." },
+      { guide: "fritas", category: "🥧 Tortas", question: "Qual o tempo total de validade das tortas após a fritura?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "As tortas têm 2 horas de validade total, incluindo os 20 minutos de resfriamento." },
+      { guide: "fritas", category: "🥧 Tortas", question: "Qual o tempo de resfriamento das tortas?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "20 minutos", explanation: "As tortas devem resfriar por 20 minutos antes de serem embaladas." },
+      { guide: "fritas", category: "🌡️ Geral", question: "Qual o limite máximo de Compostos Polares no óleo?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "Os Compostos Polares devem ser iguais ou abaixo de 24%." }
     ];
 
     let selectedGuide = "all";
