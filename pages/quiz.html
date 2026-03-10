@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulado Geral — MC Guias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .filter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-btn {
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: var(--font-body);
+      border: 2px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn.active { background: var(--red); border-color: var(--red); color: white; }
+    .filter-btn:hover:not(.active) { border-color: var(--red); color: var(--red); }
+    .start-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      padding: 24px 18px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    .start-card h2 { font-size: 20px; margin: 12px 0 8px; }
+    .start-card p  { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  </style>
+</head>
+<body data-page="quiz">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Simulado Geral</h1>
+        <p>Todos os guias</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-content" style="max-width:580px;">
+
+    <!-- Filtros -->
+    <div id="quiz-setup">
+      <div class="section-label" style="margin-bottom:12px;">Configurar Simulado</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📚</div><h2>Selecionar Guias</h2></div>
+        <div class="card-body">
+          <div class="filter-row" id="filter-row">
+            <button class="filter-btn active" data-guide="all">🎯 Todos</button>
+            <button class="filter-btn" data-guide="chapa">🔥 Chapa</button>
+            <button class="filter-btn" data-guide="lope">🥬 LOPE</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="start-card">
+        <div style="font-size:48px;">🎯</div>
+        <h2>Pronto para começar?</h2>
+        <p>As perguntas serão embaralhadas a cada tentativa. Boa sorte!</p>
+        <button class="btn-primary" onclick="startQuiz()" style="font-size:16px;padding:14px 32px;">
+          Iniciar Simulado →
+        </button>
+      </div>
+    </div>
+
+    <!-- Quiz App -->
+    <div id="quiz-app" style="display:none;"></div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Simulado Geral · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // ---- All questions pool --------------------------------
+    const ALL_QUESTIONS = [
+      // CHAPA
+      { guide: "chapa", category: "🔥 Chapa · Temperaturas", question: "Qual é a temperatura da chapa inferior?", options: ["150°C", "177°C", "200°C", "218°C"], answer: "177°C", explanation: "A chapa inferior opera a 177°C." },
+      { guide: "chapa", category: "🔥 Chapa · Temperaturas", question: "Qual é a temperatura da chapa superior?", options: ["177°C", "200°C", "218°C", "240°C"], answer: "218°C", explanation: "A chapa superior opera a 218°C." },
+      { guide: "chapa", category: "🔥 Chapa · Temperaturas", question: "Qual a temperatura da UHC?", options: ["65°C", "72°C", "79°C", "85°C"], answer: "79°C", explanation: "A UHC opera a 79°C com vida útil de 10 minutos." },
+      { guide: "chapa", category: "🔥 Chapa · UHC", question: "Qual é o tempo de vida útil dos produtos na UHC?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "10 minutos", explanation: "Os produtos têm vida útil de 10 minutos na UHC." },
+      { guide: "chapa", category: "🔥 Chapa · UHC", question: "Como devem ser removidas as carnes 4:1 para a UHC?", options: ["De 3 em 3", "De 2 em 2", "Uma a uma, sem empilhar", "Todas ao mesmo tempo"], answer: "Uma a uma, sem empilhar", explanation: "Carnes 4:1 são removidas uma a uma e não devem ser empilhadas." },
+      { guide: "chapa", category: "🔥 Chapa · Carnes", question: "Qual é o limite máximo de carnes 10:1 por lote?", options: ["4 carnes", "6 carnes", "8 carnes", "10 carnes"], answer: "6 carnes", explanation: "O limite é de 6 carnes para o 10:1 por rodada." },
+      { guide: "chapa", category: "🔥 Chapa · Carnes", question: "Em quanto tempo devem ser removidas todas as carnes?", options: ["10 segundos", "15 segundos", "18 segundos", "25 segundos"], answer: "18 segundos", explanation: "Todas as carnes devem ser removidas em 18 segundos." },
+      { guide: "chapa", category: "🔥 Chapa · Bacon", question: "Qual é o tempo de cocção do bacon na chapa?", options: ["20 segundos", "30 segundos", "40 segundos", "60 segundos"], answer: "40 segundos", explanation: "O bacon é cozinhado por 40 segundos com GAP de 90." },
+      { guide: "chapa", category: "🔥 Chapa · Bacon", question: "Qual é a validade do bacon pronto?", options: ["2 horas", "4 horas", "6 horas", "8 horas"], answer: "6 horas", explanation: "O bacon pronto tem validade de 6 horas." },
+      { guide: "chapa", category: "🔥 Chapa · Limpeza", question: "Com que frequência deve ser reforçada a limpeza do Teflon da chapa?", options: ["A cada 5 minutos", "A cada 10 minutos", "A cada 15 minutos", "A cada 30 minutos"], answer: "A cada 15 minutos", explanation: "A cada 15 minutos deve-se reforçar a limpeza com pano e rodinho sobre o Teflon." },
+      { guide: "chapa", category: "🔥 Chapa · Limpeza", question: "Em quantos panos limpos a chapa deve ser mantida?", options: ["2 panos", "3 panos", "4 panos", "5 panos"], answer: "4 panos", explanation: "4 panos: 2 para utensílios, 1 para áreas gordurosas e 1 para áreas não gordurosas." },
+
+      // LOPE
+      { guide: "lope", category: "🥬 LOPE · Tempos", question: "Qual o tempo de vida útil do tomate fatiado na mesa de condimentação?", options: ["1 hora", "2 horas", "4 horas", "6 horas"], answer: "2 horas", explanation: "O tomate fatiado tem vida útil de 2 horas na mesa de condimentação." },
+      { guide: "lope", category: "🥬 LOPE · Tempos", question: "Qual é o tempo mínimo de reidratação da cebola?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "1 hora", explanation: "A cebola deve ser reidratada por no mínimo 1 hora." },
+      { guide: "lope", category: "🥬 LOPE · Tempos", question: "Por quanto tempo o ceboleiro Best Burger pode ficar na chapa?", options: ["2 horas", "3 horas", "4 horas", "6 horas"], answer: "4 horas", explanation: "O ceboleiro Best Burger tem vida útil de 4 horas na área da chapa." },
+      { guide: "lope", category: "🥬 LOPE · Tempos", question: "Qual é a validade da cebola reidratada?", options: ["6 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "A cebola reidratada tem validade de 24 horas." },
+      { guide: "lope", category: "🥬 LOPE · Tomate", question: "Qual produto é usado para sanitizar os tomates?", options: ["Água com sal", "CHLORINE SANITIZER BB5L", "Álcool 70%", "Água quente"], answer: "CHLORINE SANITIZER BB5L", explanation: "Os tomates devem ser sanitizados com CHLORINE SANITIZER BB5L por 10 a 15 minutos." },
+      { guide: "lope", category: "🥬 LOPE · Tomate", question: "Por quanto tempo o tomate deve ser ambientado antes de ser fatiado?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "2 horas", explanation: "O tomate precisa de no mínimo 2 horas de ambientação antes de ser fatiado." },
+      { guide: "lope", category: "🥬 LOPE · Tomate", question: "Após fatiado e ambientado, o tomate pode retornar para a câmara?", options: ["Sim, por até 2 horas", "Sim, se dentro do prazo", "Não, nunca", "Sim, se embalado"], answer: "Não, nunca", explanation: "Tomates após ambientados e fatiados NÃO podem retornar para câmara de resfriados." },
+      { guide: "lope", category: "🥬 LOPE · Queijo", question: "Qual é a temperatura ideal do queijo para uso?", options: ["10°C", "13°C", "17,5°C", "22°C"], answer: "17,5°C", explanation: "A temperatura ideal do queijo é 17,5°C (entre 15°C e 18°C)." },
+      { guide: "lope", category: "🥬 LOPE · Alface", question: "Quantas cubas rasas rende 1 pacote de alface?", options: ["4 cubas", "6 cubas", "8 cubas", "10 cubas"], answer: "8 cubas", explanation: "1 pacote de alface rende 8 cubas rasas (250g) ou 4 cubas médias (500g)." },
+      { guide: "lope", category: "🥬 LOPE · Cebola", question: "Em que temperatura deve estar a água para reidratação da cebola?", options: ["0°C a 2°C", "1°C a 4°C", "5°C a 8°C", "10°C a 15°C"], answer: "1°C a 4°C", explanation: "A água deve estar entre 1°C e 4°C (água fria da máquina de suco)." },
+      { guide: "lope", category: "🥬 LOPE · Rota", question: "A cada quantos minutos o LOPE deve seguir a rota de operação?", options: ["5 minutos", "10 minutos", "15 minutos", "30 minutos"], answer: "15 minutos", explanation: "O LOPE deve seguir a rota de operação a cada 15 minutos durante todo o turno." }
+    ];
+
+    let selectedGuide = "all";
+
+    // Filter buttons
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedGuide = btn.dataset.guide;
+      });
+    });
+
+    function startQuiz() {
+      const pool = selectedGuide === "all"
+        ? ALL_QUESTIONS
+        : ALL_QUESTIONS.filter(q => q.guide === selectedGuide);
+
+      document.getElementById("quiz-setup").style.display = "none";
+      document.getElementById("quiz-app").style.display = "block";
+      initQuiz(pool);
+    }
+
+    // Override result card to show setup again
+    const _origInit = initQuiz;
+  </script>
+</body>
+</html>
